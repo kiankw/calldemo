@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func VirtualCall(a Animal) {
+	a.HelloAnimal()
+}
+
 func main() {
 	// Static call
 	A()
@@ -16,8 +20,8 @@ func main() {
 	// Virtual call
 	var a1 Animal = Cat{Name: "Tom"}
 	var a2 Animal = Mouse{Name: "Jerry"}
-	a1.HelloAnimal()
-	a2.HelloAnimal()
+	VirtualCall(a1)
+	VirtualCall(a2)
 }
 
 func A() {
