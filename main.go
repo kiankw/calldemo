@@ -4,40 +4,20 @@ import (
 	"fmt"
 )
 
-type Animal interface {
-	Hello()
-}
-
-type Cat struct {
-	Name string
-}
-
-func (c Cat) Hello() {
-	fmt.Println("I am cat", c.Name)
-}
-
-type Mouse struct {
-	Name string
-}
-
-func (m Mouse) Hello() {
-	fmt.Println("I am mouse", m.Name)
-}
-
 func main() {
 	// Static call
 	A()
 	B()
 	// Special call
 	var c Cat = Cat{Name: "Tom"}
-	c.Hello()
+	c.HelloCat()
 	var m Mouse = Mouse{Name: "Jerry"}
-	m.Hello()
+	m.HelloMouse()
 	// Virtual call
 	var a1 Animal = Cat{Name: "Tom"}
 	var a2 Animal = Mouse{Name: "Jerry"}
-	a1.Hello()
-	a2.Hello()
+	a1.HelloAnimal()
+	a2.HelloAnimal()
 }
 
 func A() {
@@ -58,4 +38,30 @@ func AB() {
 }
 func B1() {
 	fmt.Println("Hello B1")
+}
+
+type Animal interface {
+	HelloAnimal()
+}
+
+type Cat struct {
+	Name string
+}
+
+func (c Cat) HelloCat() {
+	fmt.Println("I am cat", c.Name)
+}
+func (c Cat) HelloAnimal() {
+	fmt.Println("I am animal cat", c.Name)
+}
+
+type Mouse struct {
+	Name string
+}
+
+func (m Mouse) HelloMouse() {
+	fmt.Println("I am mouse", m.Name)
+}
+func (m Mouse) HelloAnimal() {
+	fmt.Println("I am animal mouse", m.Name)
 }
