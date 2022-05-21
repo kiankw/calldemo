@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/kiankw/gotmp"
 )
 
 type Animal interface {
 	Hello()
 }
+
 type Cat struct {
 	Name string
 }
@@ -26,8 +25,15 @@ func (m Mouse) Hello() {
 }
 
 func main() {
+	// Static call
 	A()
-
+	B()
+	// Special call
+	var c Cat = Cat{Name: "Tom"}
+	c.Hello()
+	var m Mouse = Mouse{Name: "Jerry"}
+	m.Hello()
+	// Virtual call
 	var a1 Animal = Cat{Name: "Tom"}
 	var a2 Animal = Mouse{Name: "Jerry"}
 	a1.Hello()
@@ -35,54 +41,21 @@ func main() {
 }
 
 func A() {
-	fmt.Println("Hello")
 	A1()
-	A2()
 	AB()
-	ABC()
-	ABCD()
-	AHello()
+	fmt.Println("Hello A")
 }
-
 func B() {
-	fmt.Println("Hello")
+	B1()
 	AB()
-	ABC()
-	ABCD()
+	fmt.Println("Hello B")
 }
-
-func C() {
-	fmt.Println("Hello")
-	ABC()
-	ABCD()
-}
-
-func D() {
-	fmt.Println("Hello")
-	ABCD()
-}
-
 func A1() {
-	fmt.Println("Hello")
+	fmt.Println("Hello A1")
 }
-func A2() {
-	fmt.Println("Hello")
-}
-
 func AB() {
-	fmt.Println("Hello")
+	fmt.Println("Hello AB")
 }
-
-func ABC() {
-	fmt.Println("Hello")
-
-}
-
-func ABCD() {
-	fmt.Println("Hello")
-}
-
-func AHello() {
-	fmt.Println("Hello")
-	gotmp.PrintHello()
+func B1() {
+	fmt.Println("Hello B1")
 }
