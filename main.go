@@ -6,12 +6,32 @@ import (
 	"github.com/kiankw/gotmp"
 )
 
+type Animal interface {
+	Hello()
+}
+type Cat struct {
+	Name string
+}
+
+func (c Cat) Hello() {
+	fmt.Println("I am cat", c.Name)
+}
+
+type Mouse struct {
+	Name string
+}
+
+func (m Mouse) Hello() {
+	fmt.Println("I am mouse", m.Name)
+}
+
 func main() {
 	A()
-	B()
-	C()
-	D()
-	gotmp.PrintHello()
+
+	var a1 Animal = Cat{Name: "Tom"}
+	var a2 Animal = Mouse{Name: "Jerry"}
+	a1.Hello()
+	a2.Hello()
 }
 
 func A() {
