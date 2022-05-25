@@ -22,6 +22,8 @@ func main() {
 	var a2 Animal = Mouse{Name: "Jerry"}
 	VirtualCall(a1)
 	VirtualCall(a2)
+
+	MyTestBranch(true)
 }
 
 func A() {
@@ -68,4 +70,12 @@ func (m Mouse) HelloMouse() {
 }
 func (m Mouse) HelloAnimal() {
 	fmt.Println("I am animal mouse", m.Name)
+}
+
+func MyTestBranch(flag bool) {
+	if flag {
+		fmt.Println("True")
+	} else {
+		fmt.Println("False")
+	}
 }
