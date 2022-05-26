@@ -26,6 +26,11 @@ func main() {
 	MyTestBranch(true)
 }
 
+func C() {
+	A()
+	B()
+}
+
 func A() {
 	A1()
 	AB()
