@@ -17,8 +17,6 @@ func main() {
 	c.HelloCat()
 	var m Mouse = Mouse{Name: "Jerry"}
 	m.HelloMouse()
-	var d Dog = Dog{Name: "Spike"}
-	d.HelloAnimal()
 	// Virtual call
 	var a1 Animal = Cat{Name: "Tom"}
 	var a2 Animal = Mouse{Name: "Jerry"}
