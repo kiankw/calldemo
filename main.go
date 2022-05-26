@@ -17,6 +17,8 @@ func main() {
 	c.HelloCat()
 	var m Mouse = Mouse{Name: "Jerry"}
 	m.HelloMouse()
+	var d Dog = Dog{Name: "Spike"}
+	d.HelloAnimal()
 	// Virtual call
 	var a1 Animal = Cat{Name: "Tom"}
 	var a2 Animal = Mouse{Name: "Jerry"}
@@ -70,6 +72,14 @@ func (m Mouse) HelloMouse() {
 }
 func (m Mouse) HelloAnimal() {
 	fmt.Println("I am animal mouse", m.Name)
+}
+
+type Dog struct {
+	Name string
+}
+
+func (d Dog) HelloAnimal() {
+	fmt.Println("I am animal dog", c.Name)
 }
 
 func MyTestBranch(flag bool) {
