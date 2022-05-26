@@ -18,10 +18,8 @@ func main() {
 	var m Mouse = Mouse{Name: "Jerry"}
 	m.HelloMouse()
 	// Virtual call
-	var a1 Animal = Cat{Name: "Tom"}
-	var a2 Animal = Mouse{Name: "Jerry"}
-	VirtualCall(a1)
-	VirtualCall(a2)
+	var a Animal = Cat{Name: "Tom"}
+	a.HelloAnimal()
 
 	MyTestBranch(true)
 }
