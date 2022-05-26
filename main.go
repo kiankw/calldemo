@@ -79,7 +79,7 @@ type Dog struct {
 }
 
 func (d Dog) HelloAnimal() {
-	fmt.Println("I am animal dog", c.Name)
+	fmt.Println("I am animal dog", d.Name)
 }
 
 func MyTestBranch(flag bool) {
