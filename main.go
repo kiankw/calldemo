@@ -13,15 +13,23 @@ func main() {
 	A()
 	B()
 	// Special call
-	var c Cat = Cat{Name: "Tom"}
-	c.HelloCat()
 	var m Mouse = Mouse{Name: "Jerry"}
 	m.HelloMouse()
 	// Virtual call
 	var a Animal = Cat{Name: "Tom"}
 	a.HelloAnimal()
 
-	MyTestBranch(true)
+	// MyTestBranch(true)
+
+	MyPrint(HelloName)
+}
+
+func HelloName(name string) string {
+	return "Hello World!" + name
+}
+
+func MyPrint(f func(name string) string) {
+	fmt.Println(f("Tom"))
 }
 
 func C() {
