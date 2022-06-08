@@ -8,9 +8,10 @@ func Hello() {
 	fmt.Println("Hello")
 }
 func A() {
-	B(func(n int) {
-		Hello()
-	})
+	B(Bp)
+}
+func Bp(n int) {
+	Hello()
 }
 func B(fp func(int)) {
 	C(fp)
