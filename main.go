@@ -7,15 +7,12 @@ import (
 func Hello(n int) {
 	fmt.Println(n)
 }
-
 func main() {
-	A(func(n int) {
-		Hello(n)
-	})
+	A()
 }
-func A(fp func(int)) {
+func A() {
 	B(func(n int) {
-		fp(n)
+		Hello(n)
 	})
 }
 func B(fp func(int)) {
@@ -24,5 +21,10 @@ func B(fp func(int)) {
 	})
 }
 func C(fp func(int)) {
+	D(func(n int) {
+		fp(n)
+	})
+}
+func D(fp func(int)) {
 	fp(123)
 }
