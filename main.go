@@ -16,5 +16,11 @@ func A() {
 	})
 }
 func B(fp func(int)) {
+	C(fp)
+}
+func C(fp func(int)) {
+	D(fp)
+}
+func D(fp func(int)) {
 	fp(123)
 }
