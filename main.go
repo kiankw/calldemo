@@ -7,12 +7,12 @@ import (
 func main() {
 	A()
 }
-func Hello(n int) {
-	fmt.Println(n)
+func Hello() {
+	fmt.Println("Hello")
 }
 func A() {
 	B(func(n int) {
-		Hello(n)
+		Hello()
 	})
 }
 func B(fp func(int)) {
