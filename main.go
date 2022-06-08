@@ -4,11 +4,11 @@ import (
 	"fmt"
 )
 
-func Hello(n int) {
-	fmt.Println(n)
-}
 func main() {
 	A()
+}
+func Hello(n int) {
+	fmt.Println(n)
 }
 func A() {
 	B(func(n int) {
@@ -21,10 +21,5 @@ func B(fp func(int)) {
 	})
 }
 func C(fp func(int)) {
-	D(func(n int) {
-		fp(n)
-	})
-}
-func D(fp func(int)) {
 	fp(123)
 }
