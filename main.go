@@ -16,10 +16,14 @@ func A() {
 	})
 }
 func B(fp func(int)) {
-	C(fp)
+	C(func(n int) {
+		fp(n)
+	})
 }
 func C(fp func(int)) {
-	D(fp)
+	D(func(n int) {
+		fp(n)
+	})
 }
 func D(fp func(int)) {
 	fp(123)
