@@ -21,10 +21,5 @@ func B(fp func(int)) {
 	})
 }
 func C(fp func(int)) {
-	D(func(n int) {
-		fp(n)
-	})
-}
-func D(fp func(int)) {
 	fp(123)
 }
