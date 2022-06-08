@@ -2,24 +2,30 @@ package main
 
 import "fmt"
 
+func AF(s string) {
+	fmt.Print("A: ")
+	fmt.Println(s)
+}
+
+func BF(b bool) {
+	fmt.Print("B: ")
+	fmt.Println(b)
+}
+
+func CF(i int) {
+	fmt.Print("C: ")
+	fmt.Println(i)
+}
+
 func main() {
-	A(func(s string) {
-		fmt.Print("A: ")
-		fmt.Println(s)
-	})
+	A(AF)
 
 	p := People{Name: "Tom"}
-	p.B(func(b bool) {
-		fmt.Print("B: ")
-		fmt.Println(b)
-	})
+	p.B(BF)
 
 	var a Animal
 	a = Cat{Name: "Tome"}
-	a.C(func(i int) {
-		fmt.Print("C: ")
-		fmt.Println(i)
-	})
+	a.C(CF)
 }
 
 func A(fp func(string)) {
